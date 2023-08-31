@@ -80,7 +80,7 @@ class Widgets {
           cursorColor: Colors.black,
           focusNode: node,
           style: Themes.heading2.copyWith(color: Colors.black),
-          obscureText: label.contains('password')
+          obscureText: label.toUpperCase().contains('PASSWORD')
               ? ref.watch(loginLogic).obscure
               : false,
           validator: (value) {
@@ -94,7 +94,7 @@ class Widgets {
               suffixIcon: label == 'Password'
                   ? InkWell(
                       onTap: () {
-                        // ref.watch(loginLogic.notifier).togglePasswordView();
+                        ref.watch(loginLogic.notifier).togglePW();
                       },
                       child: Icon(
                         Icons.remove_red_eye,

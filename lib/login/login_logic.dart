@@ -45,4 +45,9 @@ class LoginLogic extends ChangeNotifier {
       return false;
     }
   }
+
+  togglePW() {
+    obscure = !obscure;
+    notifyListeners();
+  }
 }
